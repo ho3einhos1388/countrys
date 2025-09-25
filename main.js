@@ -1,4 +1,7 @@
 const countris = document.getElementById("countris");
+const btnl = document.getElementById("btnl")
+const btnd = document.getElementById("btnd");
+
 
 fetch(
   "https://restcountries.com/v3.1/all?fields=name,capital,flags,population,region,cca3"
@@ -10,7 +13,7 @@ fetch(
     data.forEach((value) => {
       countris.innerHTML += `
             <li>
-      <div><img src=${value.flags.png} alt="" /></div>
+      <img src=${value.flags.png} alt="" />
       <div>
         <span>${value.name.common}</span>
         <p>Population: ${value.population}</p>
@@ -21,3 +24,11 @@ fetch(
         `;
     });
   });
+btnd.addEventListener("click", () => { 
+document.documentElement.classList.add("dark")
+
+})
+btnl.addEventListener("click", () => { 
+document.documentElement.classList.remove("dark")
+
+})

@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ul div {
+  width: 264px;
+  height: 176px;
+
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-bottom: 46px;
+  padding-top: 24px;
+}
+img {
+  width: 264px;
+  height: 176px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #088fb7;
+}
+ul span {
+  padding-bottom: 10px;
+}

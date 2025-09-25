@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-black: #000;
     --spacing: 0.25rem;
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
@@ -165,20 +166,11 @@
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
-  }
   .h-full {
     height: 100%;
   }
   .h-screen {
     height: 100vh;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -192,15 +184,14 @@
   .gap-\[32px\] {
     gap: 32px;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .bg-\[\#088fb7\] {
+    background-color: #088fb7;
   }
-  .bg-\[\#1f2937\] {
-    background-color: #1f2937;
+  .bg-\[\#cae5eb\] {
+    background-color: #cae5eb;
   }
-  .bg-\[\#283945\] {
-    background-color: #283945;
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
   }
   .px-\[80px\] {
     padding-inline: 80px;
@@ -212,37 +203,50 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .text-\[\#ffffff\] {
-    color: #ffffff;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .dark\:bg-black {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-black);
+    }
   }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ul div {
+  width: 264px;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-bottom: 46px;
+  padding-top: 24px;
+}
+img {
+  width: 264px;
+  height: 176px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #088fb7;
+}
+ul span {
+  padding-bottom: 10px;
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
